@@ -74,9 +74,9 @@ class SAMLAuthBackend:
         return {
             'https': 'on' if request.scheme == 'https' else 'off',
             'http_host': request.host,
-            'request_uri': '/saml/login',
+            'request_uri': url_data.path,
             'server_port': url_data.port,
-            'script_name': request.path,
+            'script_name': url_data.path,
             'get_data': request.args.copy(),
             # Uncomment if using ADFS as IdP, https://github.com/onelogin/python-saml/pull/144
             # 'lowercase_urlencoding': True,
